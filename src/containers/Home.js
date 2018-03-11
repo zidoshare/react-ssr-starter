@@ -22,7 +22,7 @@ class Home extends Component {
     this.setState({ hasError: true });
 
     // 在这里可以做异常的上报
-    console.log('发送错误': error, info)
+    console.log('发送错误', error, info)
   }
   render() {
     let { add, count, homeInfo: { name, age } } = this.props;
