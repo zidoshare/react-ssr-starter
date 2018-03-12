@@ -1,4 +1,4 @@
-import { hydrate } from 'react-dom'
+import { hydrate, render } from 'react-dom'
 import createHistory from 'history/createBrowserHistory'
 import Loadable from 'react-loadable'
 import app from './app/index.js'
@@ -9,26 +9,27 @@ let store = configureStore(initialState)
 
 const renderApp = () => {
   let application = createApp({ store, history })
-  hydrate(application, document.getElementById('root'))
+  const renderMethod = process.env.NODE_ENV === 'development' ? render : hydrate
+  renderMethod(application, document.getElementById('root'))
 }
 
 Loadable.preloadReady().then(renderApp)
 
-if(process.env.NODE_ENV==='development'){
-  if(module.hot){
-    module.hot.accept('./store/reducers/index.js',()=>{
-      let newReducer=require('./store/reducers/index.js')
+if (process.env.NODE_ENV === 'development') {
+  if (module.hot) {
+    module.hot.accept('./store/reducers/index.js', () => {
+      let newReducer = require('./store/reducers/index.js')
       store.replaceReducer(newReducer)
       /*import('./store/reducers/index.js').then(({default:module})=>{
         store.replaceReducer(module)
       })*/
     })
-    module.hot.accept('./app/index.js',()=>{
-      let {createApp}=require('./app/index.js')
-      let newReducer=require('./store/reducers/index.js')
+    module.hot.accept('./app/index.js', () => {
+      let { createApp } = require('./app/index.js')
+      let newReducer = require('./store/reducers/index.js')
       store.replaceReducer(newReducer)
-      let application=createApp({store,history})
-      hydrate(application,document.getElementById('root'))
+      let application = createApp({ store, history })
+      hydrate(application, document.getElementById('root'))
       /*import('./app/index.js').then(({default:module})=>{
         let {createApp}=module
         import('./store/reducers/index.js').then(({default:module})=>{

@@ -9,7 +9,7 @@ require('babel-register')({
 const app = require('./app.js').default,
   clientRouter = require('./clientRouter.js').default,
   port = process.env.port || 3002,
-  staticCache = require("koa-static-cache"),
+  staticCache = require('koa-static-cache'),
   path = require('path'),
   cors = require('koa2-cors'),
   Loadable = require('react-loadable')

@@ -15,7 +15,7 @@ module.exports = {
   },
   output: {
     filename: '[name].[hash:8].js',
-    path: path.resolve(rootPath, './dist/client'),
+    path: path.resolve(rootPath, './dist'),
     publicPath: '/',
     chunkFilename: '[name]-[hash:8].js',
   },

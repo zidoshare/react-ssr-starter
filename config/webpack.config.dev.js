@@ -41,7 +41,7 @@ module.exports = merge(common, {
         }, {
           loader: 'postcss-loader',
           options: {
-            plugins: () => [require("autoprefixer")({ browsers: 'last 5 versions' })],
+            plugins: () => [require('autoprefixer')({ browsers: 'last 5 versions' })],
             sourceMap: true,
           },
         }, {

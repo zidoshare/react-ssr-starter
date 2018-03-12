@@ -1,13 +1,14 @@
 const path = require('path')
 const webpack = require('webpack')
-const CleanWebpackPlugin = require("clean-webpack-plugin")
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const ManifestPlugin = require('webpack-manifest-plugin')
 const { ReactLoadablePlugin } = require('react-loadable/webpack')
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const isServer = process.env.BUILD_TYPE === 'server'
-import common from './webpack.common'
+// const isServer = process.env.BUILD_TYPE === 'server'
+const common = require('./webpack.common')
+const rootPath = path.join(__dirname, '../')
 const merge = require('webpack-merge')
 module.exports = merge(common, {
   module: {
@@ -15,11 +16,11 @@ module.exports = merge(common, {
       {
         test: /\.jsx?$/,
         exclude: /node_modules/,
-        include: path.resolve(rootPath, "src"),
+        include: path.resolve(rootPath, 'src'),
         use: {
           loader: 'babel-loader',
           options: {
-            presets: ['env', 'react', 'stage-0'],
+            presets: ['env', 'react'],
             plugins: ['transform-runtime', 'syntax-dynamic-import'],
             cacheDirectory: true,
           }
@@ -27,7 +28,7 @@ module.exports = merge(common, {
       }, {
         test: /\.(css|scss)$/,
         exclude: /node_modules/,
-        include: path.resolve(rootPath, "src"),
+        include: path.resolve(rootPath, 'src'),
         use: ExtractTextPlugin.extract({
           fallback: 'style-loader',//style-loader将css chunk 插入到html中
           use: [{
