@@ -9,6 +9,7 @@
     "eslint:recommended",
     "plugin:react/recommended"
   ],
+  "parser": "babel-eslint",
   "parserOptions": {
     "ecmaFeatures": {
       "experimentalObjectRestSpread": true,
@@ -19,13 +20,6 @@
   "plugins": [
     "react"
   ],
-  "settings": {
-    "react": {
-      "createClass": "createClass",
-      "pragma": "React",
-      "version": "16.2.0"
-    }
-  },
   "rules": {
     "indent": [
       "error",
@@ -33,7 +27,7 @@
     ],
     "linebreak-style": [
       "error",
-      "Unix"
+      "unix"
     ],
     "quotes": [
       "error",

@@ -1,10 +1,10 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { bindActionCreators } from 'redux';
-import * as actions from '../store/actions/home';
-import { Link } from 'react-router-dom';
-import { Route, Switch } from 'react-router-dom';
-import Page from '../containers/Page';
+import React, { Component } from 'react'
+import { connect } from 'react-redux'
+import { bindActionCreators } from 'redux'
+import * as actions from '../store/actions/home'
+import { Link } from 'react-router-dom'
+import { Route, Switch } from 'react-router-dom'
+import Page from '../containers/Page'
 import '../assets/css/my.scss'
 class Home extends Component {
   constructor(props) {
@@ -19,13 +19,13 @@ class Home extends Component {
   }
 
   componentDidCatch(error, info) {
-    this.setState({ hasError: true });
+    this.setState({ hasError: true })
 
     // 在这里可以做异常的上报
     console.log('发送错误', error, info)
   }
   render() {
-    let { add, count, homeInfo: { name, age } } = this.props;
+    let { add, count, homeInfo: { name, age } } = this.props
     return (
       <div>
         <p>{count}</p>

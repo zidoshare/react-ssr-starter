@@ -1,6 +1,6 @@
-import React,{Component} from 'react';
+import React from 'react'
 
-const Page=()=>
+const Page = () =>
   <div>yyy</div>
 
-export default Page;
+export default Page

@@ -1,9 +1,9 @@
-import {combineReducers} from 'redux';
-import {counter,homeInfo} from './home';
+import { combineReducers } from 'redux'
+import { counter, homeInfo } from './home'
 import { routerReducer } from 'react-router-redux'
 
 export default combineReducers({
-  router:routerReducer,
+  router: routerReducer,
   counter,
   homeInfo,
 })

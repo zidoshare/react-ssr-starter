@@ -1,7 +1,7 @@
 import React from 'react'
-import {Route, Switch } from 'react-router-dom';
-import  {ConnectedRouter}  from 'react-router-redux';
-import routesConfig from './routes';
+import {Route, Switch } from 'react-router-dom'
+import  {ConnectedRouter}  from 'react-router-redux'
+import routesConfig from './routes'
 
 const Routers=({history})=>(
   <ConnectedRouter history={history}>
@@ -15,4 +15,4 @@ const Routers=({history})=>(
   </ConnectedRouter>
 )
 
-export default Routers;
+export default Routers

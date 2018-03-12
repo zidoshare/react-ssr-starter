@@ -1,7 +1,7 @@
-import React from 'react';
-import {Provider} from 'react-redux';
-import Routers from './router/index';
-import Loadable from 'react-loadable';
+import React from 'react'
+import {Provider} from 'react-redux'
+import Routers from './router/index'
+import Loadable from 'react-loadable'
 
 const createApp=({store,history,modules})=>{
   console.log(process.env.NODE_ENV==='production',process.env.NODE_ENV)
@@ -24,4 +24,4 @@ const createApp=({store,history,modules})=>{
 
 }
 
-export default createApp;
+export default createApp
