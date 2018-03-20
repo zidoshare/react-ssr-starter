@@ -1,6 +1,6 @@
-# react-server-render-demo
+# react-ssr-starter
 
-react 服务端渲染项目
+react 服务端渲染脚手架
 
 ## 开发与构建
 

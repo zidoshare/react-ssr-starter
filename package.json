@@ -1,7 +1,7 @@
 {
-  "name": "go-store-client",
+  "name": "react-ssr-starter",
   "version": "1.0.0",
-  "description": "",
+  "description": "react 服务端渲染脚手架",
   "main": "index.js",
   "scripts": {
     "start": "cross-env NODE_ENV=development webpack-dev-server --info=false --config ./webpack.config.dev.js ",
