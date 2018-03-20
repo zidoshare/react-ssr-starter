@@ -1,0 +1,19 @@
+html,
+body,
+#root {
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  margin: 20px;
+  text-align: center;
+  a {
+    display: inline-block;
+    margin: 0 20px;
+    color: black;
+  }
+  a.active{
+    background-color: orange;
+  }
+}

@@ -1,0 +1,4 @@
+{
+  "editor.tabSize": 2,
+  "beautify.tabSize": 2, //Beautify css, sass and less code (extension for Visual Studio Code)
+}
