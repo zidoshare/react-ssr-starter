@@ -7,5 +7,5 @@ import rootReducer from '../reducers'
 const routerReducers = routerMiddleware(createHistory())
 const composeEnhancers = process.env.NODE_ENV == 'development' ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ : compose
 const middleware = [thunkMiddleware, routerReducers]
-let configureStore = (initialState) => createStore(rootReducer, initialState, composeEnhancers(applyMiddleware(...middleware)))
+let configureStore = (initialState) => createStore(rootReducer, initialState, composeEnhancers?composeEnhancers(applyMiddleware(...middleware)):applyMiddleware(...middleware)
 export default configureStore
